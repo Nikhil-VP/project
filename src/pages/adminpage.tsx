@@ -24,7 +24,7 @@ function AdminPage() {
     useEffect(() => {
         const fetchQuotes = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/quotes'); // Ensure this URL is correct
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quotes`); // Change this line to use the correct URL
                 const data = await response.json();
                 setQuotes(data);
 
@@ -57,7 +57,7 @@ function AdminPage() {
 
         // Send the updated flag value to the backend
         try {
-            await fetch(`http://localhost:5000/api/quotes/${quote._id}`, {
+            await fetch(`${import.meta.env.VITE_API_URL}/api/quotes/${quote._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ function AdminPage() {
         try {
             await Promise.all(quotes.map(async (quote) => {
                 console.log(`Updating Quote ID: ${quote.id} with Flag: ${quote.flag}`); // Debugging log
-                const response = await fetch(`http://localhost:5000/api/quotes/${quote.id}`, { // Ensure the URL is correct
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quotes/${quote.id}`, { // Ensure the URL is correct
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

@@ -35,7 +35,7 @@ function GetQuote() {
     setErrorMessage(''); // Clear any previous error message
 
     try {
-      const response = await fetch('http://localhost:5000/api/quotes', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quotes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
