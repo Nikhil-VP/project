@@ -12,6 +12,9 @@ import Specifications from './pages/Specifications';
 import Login from './pages/login';
 import AdminPage from './pages/adminpage';
 
+// Import the image
+import logoIcon from './images/Picture2.png';
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -23,39 +26,39 @@ function App() {
             <div className="flex justify-between h-16">
               <div className="flex items-center">
                 <Link to="/" className="flex-shrink-0 flex items-center">
+                  <img src={logoIcon} alt="Logo" className="h-6 w-6 mr-2" />
                   <span className="text-2xl font-bold text-primary-300">VTI</span>
-                  
                 </Link>
               </div>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
-                <Link to="/" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Home
                 </Link>
-                <Link to="/what-we-do" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/what-we-do" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   What We Do
                 </Link>
-                <Link to="/services" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/services" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Services
                 </Link>
-                <Link to="/specifications" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/specifications" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Specifications
                 </Link>
-                <Link to="/gallery" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/gallery" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Gallery  
                 </Link>
                 {/* Commenting out the Products link */}
                 {/* <Link to="/products" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
                   Products
                 </Link> */}
-                <Link to="/contact" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/contact" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Contact
                 </Link>
                 <Link to="/get-quote" className="bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-700">
                   Get Quote
                 </Link>
-                <Link to="/login" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
+                <Link to="/login" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Login
                 </Link>
               </div>
