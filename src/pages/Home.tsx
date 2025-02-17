@@ -1,7 +1,7 @@
 //import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import mach3 from '../images/panoramic-industrial-silhouette-oil-industry-factory-buildings-refinery-complex-with-pipes-and-tanks-landscape-background-illustration-vector.jpg';
 function Home() {
   return (
     <div className="min-h-screen">
@@ -9,7 +9,7 @@ function Home() {
       <div 
         className="relative h-screen bg-cover bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/src/images/panoramic-industrial-silhouette-oil-industry-factory-buildings-refinery-complex-with-pipes-and-tanks-landscape-background-illustration-vector.jpg")'
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${mach3}")`
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
