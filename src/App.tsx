@@ -118,11 +118,13 @@ function App() {
             <Route path="/what-we-do" element={<WhatWeDo />} />
             {/* Commenting out the Products route */}
             {/* <Route path="/products" element={<Products />} /> */}
-            <Route path="/gallery" element={<Gallery />} />
+            
             <Route path="/services" element={<Services />} />
+            <Route path="/specifications" element={<Specifications />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-quote" element={<GetQuote />} />
-            <Route path="/specifications" element={<Specifications />} />
+            
             <Route path="/login" element={<Login />} />
             <Route path="/adminpage" element={<AdminPage />} />
           </Routes>
