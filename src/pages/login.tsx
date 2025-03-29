@@ -1,37 +1,39 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Define an interface for the component's props
-interface LoginPageProps {}
-
-const LoginPage: React.FC<LoginPageProps> = () => {
+const LoginPage: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Replace this with your actual login logic
-        const isAuthenticated = await fakeLogin(username, password);
-        if (isAuthenticated) {
-            navigate('/adminpage');
-        } else {
-            alert('Login failed. Please check your credentials.');
+        setError('');
+        try {
+            const response = await fetch('http://localhost:5001/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                navigate('/adminpage');
+            } else {
+                setError(data.error || 'Login failed. Please check your credentials.');
+            }
+        } catch (err) {
+            setError('Error connecting to server. Please try again.');
         }
-    };
-
-    const fakeLogin = async (username: string, password: string) => {
-        // Simulate an API call
-        return username === 'admin' && password === '123';
     };
 
     return (
         <div style={{ 
             maxWidth: '400px', 
-            marginTop: '5rem',
-            left: '50%', 
             position: 'absolute',
             top: '50%',
+            left: '50%',
             transform: 'translate(-50%, -50%)',
             width: '400px',
             padding: '2rem', 
@@ -40,6 +42,7 @@ const LoginPage: React.FC<LoginPageProps> = () => {
             backgroundColor: '#ffffff'
         }}>
             <h1 style={{ textAlign: 'center', marginBottom: '1rem', color: 'rgb(124, 58, 237)' }}>Login</h1>
+            {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
             <form onSubmit={handleLogin}>
                 <div style={{ marginBottom: '1rem' }}>
                     <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem', color: 'rgb(124, 58, 237)' }}>Username:</label>

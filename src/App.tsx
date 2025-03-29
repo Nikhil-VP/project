@@ -11,6 +11,7 @@ import GetQuote from './pages/GetQuote';
 import Specifications from './pages/Specifications';
 import Login from './pages/login';
 import AdminPage from './pages/adminpage';
+import PrivateRoute from './components/PrivateRoute';
 
 // Import the image
 import logoIcon from './images/Picture2.png';
@@ -126,7 +127,11 @@ function App() {
             <Route path="/get-quote" element={<GetQuote />} />
             
             <Route path="/login" element={<Login />} />
-            <Route path="/adminpage" element={<AdminPage />} />
+
+            <Route element={<PrivateRoute />}>
+                    <Route path="/adminpage" element={<AdminPage />} />
+            </Route>
+            <Route path="*" element={<Home />} />
           </Routes>
         </div>
       </div>
