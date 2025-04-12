@@ -80,32 +80,32 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden bg-primary-900">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Home
                 </Link>
-                <Link to="/what-we-do" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/what-we-do" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   What We Do
                 </Link>
                 {/* Commenting out the Products link in mobile navigation */}
                 {/* <Link to="/products" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Products
                 </Link> */}
-                <Link to="/specifications" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/specifications" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Specifications
                 </Link>
-                <Link to="/gallery" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/gallery" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Gallery
                 </Link>
-                <Link to="/services" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/services" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Services
                 </Link>
-                <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Contact
                 </Link>
-                <Link to="/get-quote" className="block px-3 py-2 rounded-md text-base font-medium bg-primary-600 text-white hover:bg-primary-700">
+                <Link to="/get-quote" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium bg-primary-600 text-white hover:bg-primary-700">
                   Get Quote
                 </Link>
-                <Link to="/login" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Login
                 </Link>
               </div>

@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -17,6 +17,15 @@ export default {
           900: '#4c1d95',
           950: '#2e1065',
         },
+      },
+      keyframes: {
+        moveBg: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 0%' },
+        },
+      },
+      animation: {
+        moveBg: 'moveBg 100s linear infinite',
       },
     },
   },
