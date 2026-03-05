@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import Home from './pages/Home';
 import WhatWeDo from './pages/WhatWeDo';
 // import Products from './pages/Products';
-import Gallery from './pages/Gallery';
+// import Gallery from './pages/Gallery';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import GetQuote from './pages/GetQuote';
@@ -46,9 +46,9 @@ function App() {
                 <Link to="/specifications" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Specifications
                 </Link>
-                <Link to="/gallery" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
+                {/* <Link to="/gallery" className="text-gray-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium">
                   Gallery  
-                </Link>
+                </Link> */}
                 {/* Commenting out the Products link */}
                 {/* <Link to="/products" className="text-gray-300 hover:text-primary-300 px-3 py-2 rounded-md text-sm font-medium">
                   Products
@@ -93,9 +93,9 @@ function App() {
                 <Link to="/specifications" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Specifications
                 </Link>
-                <Link to="/gallery" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
+                {/* <Link to="/gallery" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Gallery
-                </Link>
+                </Link> */}
                 <Link to="/services" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary-300">
                   Services
                 </Link>
@@ -122,7 +122,7 @@ function App() {
             
             <Route path="/services" element={<Services />} />
             <Route path="/specifications" element={<Specifications />} />
-            <Route path="/gallery" element={<Gallery />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-quote" element={<GetQuote />} />
             

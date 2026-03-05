@@ -58,18 +58,18 @@ function AdminPage() {
     const toggleFlag = async (index: number) => {
         const quote = quotes[index];
         if (!quote._id) return;
-
+    
         const newFlagValue = quote.flag === 1 ? 0 : 1;
         const updatedQuotes = [...quotes];
         updatedQuotes[index] = { ...quote, flag: newFlagValue };
         setQuotes(updatedQuotes);
-
+    
         try {
             await fetch(`${import.meta.env.VITE_API_URL}/api/quotes/${quote._id}`, {
                 method: 'PUT',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ flag: newFlagValue }),
             });
